@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "description": "Non-custodial exchange for ERC-1155 tokens, based on Uniswap",
   "repository": "https://github.com/reserva/reserva",
-  "license": "MIT",
+  "license": "APACHE-2.0",
   "keywords": [
     "ERC",
     "ethereum",
