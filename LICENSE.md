@@ -8,7 +8,7 @@ You may not use this file or any file within this repository except in complianc
 
 Unless required by applicable law or agreed to in writing, software distributed under [the License](http://www.apache.org/licenses/LICENSE-2.0/ "Apache Version 2.0 License") is distributed on an __"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND__, *either express or implied*.
 
-Please refer to the documentation for [the License](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License") for the specific language governing permissions and limitations under the License.
+Please refer to the documentation for [the License](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License") for the specific language governing permissions and limitations under [the License](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License").
 
 ## TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
