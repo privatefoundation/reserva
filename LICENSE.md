@@ -1,14 +1,14 @@
 # Apache License
 
-Licensed under the _[Apache License, Version 2.0, January 2004](http://www.apache.org/licenses/ "Apache License") (["the License"](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License")).
+Licensed under the _[Apache License, Version 2.0, January 2004](http://www.apache.org/licenses/ "Apache License")_, henceforth referrenced as ["the License"](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License").
 
 ## Copyright 2020 [Fundación Privada](https://privada.one/ "Fundación Privada")
 
-You may not use this file except in compliance with [the License](http://www.apache.org/licenses/LICENSE-2.0/ "Apache Version 2.0 License").
+You may not use this file or any file within this repository except in compliance with [the License](http://www.apache.org/licenses/LICENSE-2.0/ "Apache Version 2.0 License").
 
 Unless required by applicable law or agreed to in writing, software distributed under [the License](http://www.apache.org/licenses/LICENSE-2.0/ "Apache Version 2.0 License") is distributed on an __"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND__, *either express or implied*.
 
-See [the License](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License") for the specific language governing permissions and limitations under the License.
+Please refer to the documentation for [the License](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License") for the specific language governing permissions and limitations under the License.
 
 ## TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
@@ -74,4 +74,6 @@ See [the License](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License
 
    While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.
 
+## © 2020 [Fundación Privada](https://privada.one/ "Fundación Privada")
 
+Inquires regarding this specific publication of [the License](http://www.apache.org/licenses/LICENSE-2.0/ "Apache Version 2.0 License") should be directed to [legal@privada.one](mailto:legal@privada.one "Fundación Privada Legal Services").
