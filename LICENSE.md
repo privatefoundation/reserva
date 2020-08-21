@@ -1,6 +1,6 @@
 # Apache License
 
-Licensed under the _[Apache License, Version 2.0, January 2004](http://www.apache.org/licenses/ "Apache License")_, henceforth referrenced as ["the License"](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License").
+Licensed under the _[Apache License, Version 2.0, January 2004](http://www.apache.org/licenses/ "Apache License")_, henceforth referrenced as "[the License](http://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License")".
 
 ## Copyright 2020 [Fundación Privada](https://privada.one/ "Fundación Privada")
 
