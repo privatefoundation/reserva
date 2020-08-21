@@ -78,4 +78,4 @@ Please refer to the documentation for [the License](http://www.apache.org/licens
 
 [Fundación Privada](https://privada.one/ "Fundación Privada") is a 501(c)(6) membership based nonprofit registered in the Commonwealth of Puerto Rico.
 
-Inquires regarding this specific publication of [the License](http://www.apache.org/licenses/LICENSE-2.0/ "Apache Version 2.0 License") should be directed to [legal@privada.one](mailto:legal@privada.one "Fundación Privada Legal Services").
+Inquires regarding this specific publication of [the License](http://www.apache.org/licenses/LICENSE-2.0/ "Apache Version 2.0 License") must be directed to [legal@privada.one](mailto:legal@privada.one "Fundación Privada Legal Services").
