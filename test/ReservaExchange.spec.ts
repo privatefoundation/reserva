@@ -142,8 +142,8 @@ describe('ReservaExchange', () => {
         } else if (condition[1] === 3) {
           ownerCurrencyContract = await ownerERC1155Contract.connect(ownerSigner) as ERC1155Mock
         }
-        userCurrencyContract = ownerCurrencyContract.connect(userSigner) as ERC1155Mock
-        operatorCurrencyContract = ownerCurrencyContract.connect(operatorSigner) as ERC1155Mock
+        userCurrencyContract = await ownerCurrencyContract.connect(userSigner) as ERC1155Mock
+        operatorCurrencyContract = await ownerCurrencyContract.connect(operatorSigner) as ERC1155Mock
 
         // Deploy Reserva factory
         reservaFactoryContract = await reservaFactoryAbstract.deploy(ownerWallet) as ReservaFactory
