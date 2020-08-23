@@ -1,7 +1,7 @@
 {
   "name": "reserva",
-  "version": "0.4.0",
-  "description": "Non-custodial exchange for ERC-1155 tokens, based on Uniswap",
+  "version": "0.0.1",
+  "description": "Non-custodial exchange for ERC-1155 tokens.",
   "repository": "https://github.com/reserva/reserva",
   "license": "APACHE-2.0",
   "keywords": [
@@ -72,6 +72,6 @@
     "typescript": "3.9.2"
   },
   "dependencies": {
-    "multi-token-standard": "^0.9.4"
+    "multi-token-standard": "^0.9.6"
   }
 }

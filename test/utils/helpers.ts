@@ -4,13 +4,13 @@ export const UNIT_ETH = ethers.utils.parseEther('1')
 export const HIGH_GAS_LIMIT = { gasLimit: 6e9 }
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 
-import { 
-  BuyTokensObj, 
-  SellTokensObj, 
-  AddLiquidityObj, 
-  RemoveLiquidityObj 
+import {
+  BuyTokensObj,
+  SellTokensObj,
+  AddLiquidityObj,
+  RemoveLiquidityObj
 } from '../../typings/txTypes'
-import { BigNumber } from 'ethers/utils';
+import { BigNumber } from 'ethers/utils'
 
 // createTestWallet creates a new wallet
 export const createTestWallet = (web3: any, addressIndex: number = 0) => {
@@ -32,10 +32,10 @@ export function RevertError(errorMessage?: string) {
 }
 
 export const methodsSignature = {
-  BUYTOKENS: "0xb2d81047",
-  SELLTOKENS: "0xdb08ec97",
-  ADDLIQUIDITY: "0x82da2b73",
-  REMOVELIQUIDITY: "0x5c0bf259"
+  BUYTOKENS: '0xb2d81047',
+  SELLTOKENS: '0xdb08ec97',
+  ADDLIQUIDITY: '0x82da2b73',
+  REMOVELIQUIDITY: '0x5c0bf259'
 }
 
 export const BuyTokensType = `tuple(
@@ -71,7 +71,7 @@ export interface JSONRPCRequest {
 
 export const getBuyTokenData = (
   recipient: string,
-  types: number[] | ethers.utils.BigNumber[], 
+  types: number[] | ethers.utils.BigNumber[],
   tokensAmountsToBuy: ethers.utils.BigNumber[],
   deadline: number) => {
   const buyTokenObj = {
@@ -88,7 +88,7 @@ export const getBuyTokenData = (
 
 export const getSellTokenData = (
   recipient: string,
-  cost: BigNumber, 
+  cost: BigNumber,
   deadline: number
 ) => {
   const sellTokenObj = {

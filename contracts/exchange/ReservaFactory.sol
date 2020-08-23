@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: APACHE-2.0
+
 pragma solidity ^0.6.8;
 import "./ReservaExchange.sol";
 import "../interfaces/IReservaFactory.sol";

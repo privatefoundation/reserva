@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: APACHE-2.0
+
 pragma solidity ^0.6.8;
 pragma experimental ABIEncoderV2;
 import "../interfaces/IReservaExchange.sol";
@@ -114,7 +116,7 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
    * @param _tokenIds             Array of Tokens ID that are bought
    * @param _tokensBoughtAmounts  Amount of Tokens id bought for each corresponding Token id in _tokenIds
    * @param _maxCurrency          Total maximum amount of currency tokens to spend for all Token ids
-   * @param _deadline             Block number after which this transaction will be reverted
+   * @param _deadline             Timestamp after which this transaction will be reverted
    * @param _recipient            The address that receives output Tokens and refund
    * @return currencySold How much currency was actually sold.
    */
@@ -127,7 +129,7 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
     internal nonReentrant() returns (uint256[] memory currencySold)
   {
     // Input validation
-    require(_deadline >= block.number, "ReservaExchange#_currencyToToken: DEADLINE_EXCEEDED");
+    require(_deadline >= block.timestamp, "ReservaExchange#_currencyToToken: DEADLINE_EXCEEDED");
 
     // Number of Token IDs to deposit
     uint256 nTokens = _tokenIds.length;
@@ -212,7 +214,7 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
    * @param _tokenIds          Array of Token IDs that are sold
    * @param _tokensSoldAmounts Array of Amount of Tokens sold for each id in _tokenIds.
    * @param _minCurrency       Minimum amount of currency tokens to receive
-   * @param _deadline          Block number after which this transaction will be reverted
+   * @param _deadline          Timestamp after which this transaction will be reverted
    * @param _recipient         The address that receives output currency tokens.
    * @return currencyBought How much currency was actually purchased.
    */
@@ -228,7 +230,7 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
     uint256 nTokens = _tokenIds.length;
 
     // Input validation
-    require(_deadline >= block.number, "ReservaExchange#_tokenToCurrency: DEADLINE_EXCEEDED");
+    require(_deadline >= block.timestamp, "ReservaExchange#_tokenToCurrency: DEADLINE_EXCEEDED");
 
     // Initialize variables
     uint256 totalCurrency = 0; // Total amount of currency tokens to transfer
@@ -315,7 +317,7 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
    * @param _tokenAmounts  Array of amount of Tokens deposited corresponding to each ID provided in _tokenIds
    * @param _maxCurrency   Array of maximum number of tokens deposited for each ID provided in _tokenIds.
    *                       Deposits max amount if total liquidity pool token supply is 0.
-   * @param _deadline      Block number after which this transaction will be reverted
+   * @param _deadline      Timestamp after which this transaction will be reverted
    */
   function _addLiquidity(
     address _provider,
@@ -326,7 +328,7 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
     internal nonReentrant()
   {
     // Requirements
-    require(_deadline >= block.number, "ReservaExchange#_addLiquidity: DEADLINE_EXCEEDED");
+    require(_deadline >= block.timestamp, "ReservaExchange#_addLiquidity: DEADLINE_EXCEEDED");
 
     // Initialize variables
     uint256 nTokens = _tokenIds.length; // Number of Token IDs to deposit
@@ -392,7 +394,6 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
 
         // Proportion of the liquidity pool to give to current liquidity provider
         // If rounding error occured, round down to favor previous liquidity providers
-        // See https://github.com/privatefoundation/reserva/issues/19
         liquiditiesToMint[i] = (currencyAmount.sub(rounded ? 1 : 0)).mul(totalLiquidity) / currencyReserve;
         currencyAmounts[i] = currencyAmount;
 
@@ -439,7 +440,7 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
    * @param _poolTokenAmounts Array of Amount of liquidity pool tokens burned for each Token id in _tokenIds.
    * @param _minCurrency      Minimum currency withdrawn for each Token id in _tokenIds.
    * @param _minTokens        Minimum Tokens id withdrawn for each Token id in _tokenIds.
-   * @param _deadline         Block number after which this transaction will be reverted
+   * @param _deadline         Timestamp after which this transaction will be reverted
    */
   function _removeLiquidity(
     address _provider,
@@ -451,7 +452,7 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
     internal nonReentrant()
   {
     // Input validation
-    require(_deadline > block.number, "ReservaExchange#_removeLiquidity: DEADLINE_EXCEEDED");
+    require(_deadline > block.timestamp, "ReservaExchange#_removeLiquidity: DEADLINE_EXCEEDED");
 
     // Initialize variables
     uint256 nTokens = _tokenIds.length;                       // Number of Token IDs to deposit
@@ -520,24 +521,24 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
     address recipient;             // Who receives the tokens
     uint256[] tokensBoughtIDs;     // Token IDs to buy
     uint256[] tokensBoughtAmounts; // Amount of token to buy for each ID
-    uint256 deadline;              // Block # after which the tx isn't valid anymore
+    uint256 deadline;              // Timestamp after which the tx isn't valid anymore
   }
 
   struct SellTokensObj {
     address recipient;   // Who receives the currency
     uint256 minCurrency; // Total minimum number of currency  expected for all tokens sold
-    uint256 deadline;    // Block # after which the tx isn't valid anymore
+    uint256 deadline;    // Timestamp after which the tx isn't valid anymore
   }
 
   struct AddLiquidityObj {
     uint256[] maxCurrency; // Maximum number of currency to deposit with tokens
-    uint256 deadline;        // Block # after which the tx isn't valid anymore
+    uint256 deadline;        // Timestamp after which the tx isn't valid anymore
   }
 
   struct RemoveLiquidityObj {
     uint256[] minCurrency; // Minimum number of currency to withdraw
     uint256[] minTokens;   // Minimum number of tokens to withdraw
-    uint256 deadline;      // Block # after which the tx isn't valid anymore
+    uint256 deadline;      // Timestamp after which the tx isn't valid anymore
   }
 
   // Method signatures for onReceive control logic
@@ -867,7 +868,7 @@ contract ReservaExchange is ReentrancyGuard, ERC1155MintBurn, ERC1155Meta {
    *      This function MUST NOT consume more thsan 5,000 gas.
    * @return Whether a given interface is supported
    */
-  function supportsInterface(bytes4 interfaceID) external override pure returns (bool) {
+  function supportsInterface(bytes4 interfaceID) public override pure returns (bool) {
     return  interfaceID == type(IERC165).interfaceId ||
       interfaceID == type(IERC1155).interfaceId ||
       interfaceID == type(IERC1155TokenReceiver).interfaceId;
